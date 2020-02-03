@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Flight_System
 {
-    class Class1
+    class AirlineCompany
     {
     }
 }
