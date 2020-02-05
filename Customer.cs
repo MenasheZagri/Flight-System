@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Flight_System
 {
-    class AirlineCompany : IPoco, IUser
+    class Customer: IPoco,IUser
     {
-        //test 04.02.2020
     }
 }
