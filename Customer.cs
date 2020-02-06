@@ -28,5 +28,53 @@ namespace Flight_System
             _phoneNumber = phoneNumber;
             _creditCardNumber = creditCardNumber;
         }
+
+        public Customer()
+        {
+            
+        }
+
+        #region Overrides
+        public static bool operator ==(Customer a, Customer b)
+        {
+            if (a == b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(Customer a, Customer b)
+        {
+            if (a != b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            Customer customer = obj as Customer;
+            return (this._id == customer._id);
+        }
+
+        public override int GetHashCode()
+        {
+            return this._id;
+        }
+        public override string ToString()
+        {
+            return $"{_id}{_firstName}{_lastName}{_address}{_phoneNumber}{_userName}{_password}{_creditCardNumber} ";
+        }
+        #endregion
     }
 }

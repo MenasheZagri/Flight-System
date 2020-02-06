@@ -18,5 +18,53 @@ namespace Flight_System
             _flightId = flightId;
             _customerId = customerId;
         }
+
+        public Ticket()
+        {
+            
+        }
+
+        #region Overrides
+        public static bool operator ==(Ticket a, Ticket b)
+        {
+            if (a == b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(Ticket a, Ticket b)
+        {
+            if (a != b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            Ticket ticket = obj as Ticket;
+            return (this._id == ticket._id);
+        }
+
+        public override int GetHashCode()
+        {
+            return this._id;
+        }
+        public override string ToString()
+        {
+            return $"{_id} {_flightId} {_customerId}";
+        }
+        #endregion
     }
 }

@@ -22,5 +22,53 @@ namespace Flight_System
             _password = password;
             _countryCode = countryCode;
         }
+
+        public AirlineCompany()
+        {
+            
+        }
+
+        #region Overrides
+        public static bool operator ==(AirlineCompany a, AirlineCompany b)
+        {
+            if (a == b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(AirlineCompany a, AirlineCompany b)
+        {
+            if (a != b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            AirlineCompany airlineCompany = obj as AirlineCompany;
+            return (this._id == airlineCompany._id);
+        }
+
+        public override int GetHashCode()
+        {
+            return this._id;
+        }
+        public override string ToString()
+        {
+            return $"{_id} {_airlineName} {_countryCode} {_password} {_userName}";
+        }
+        #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,5 +27,53 @@ namespace Flight_System
             _landingTime = landingTime;
             _remainingTickets = remainingTickets;
         }
+
+        public Flight()
+        {
+            
+        }
+
+        #region Overrides
+        public static bool operator ==(Flight a, Flight b)
+        {
+            if (a == b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(Flight a, Flight b)
+        {
+            if (a != b)
+            {
+                return true;
+            }
+
+            else
+            {
+                return false;
+            }
+        }
+
+        public override bool Equals(object obj)
+        {
+            Flight flight = obj as Flight;
+            return (this._id == flight._id);
+        }
+
+        public override int GetHashCode()
+        {
+            return this._id;
+        }
+        public override string ToString()
+        {
+            return $"{_id} {_airlineCompanyId} {_departureTime} {_originCountryCode} {_destinationCountryCode} {_landingTime} {_remainingTickets}";
+        }
+        #endregion
     }
 }
