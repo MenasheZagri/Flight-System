@@ -9,22 +9,13 @@ namespace Flight_System
 {
     class Country: IPoco,IUser
     {
+        public int _id;
+        public string _countryName;
 
-        private int _id;
-        private string _airlineName;
-        private string _userName;
-        private string _password;
-        private int _countryCode;
-
-        public Country (int id, string airlineName, string userName, string password, int countryCode)
+        public Country(int id, string countryName)
         {
             _id = id;
-            _airlineName = airlineName;
-            _userName = userName;
-            _password = password;
-            _countryCode = countryCode;
+            _countryName = countryName;
         }
-
-
     }
 }

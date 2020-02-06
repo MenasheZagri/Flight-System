@@ -8,6 +8,19 @@ namespace Flight_System
 {
     class AirlineCompany : IPoco, IUser
     {
-        //test 04.02.2020
+        public int _id;
+        public string _airlineName;
+        public string _userName;
+        public string _password;
+        public int _countryCode;
+
+        public AirlineCompany(int id, string airlineName, string userName, string password, int countryCode)
+        {
+            _id = id;
+            _airlineName = airlineName;
+            _userName = userName;
+            _password = password;
+            _countryCode = countryCode;
+        }
     }
 }
